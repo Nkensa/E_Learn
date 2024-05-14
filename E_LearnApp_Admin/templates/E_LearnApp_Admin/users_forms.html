@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    {% if object %}
+        <span> Modification de {{ user.last_name }} {{ user.first_name }} </span>
+    {% else %}
+        <span> Ajouter un Utilisateur </span>
+    {% endif %}
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="row">
+            <div class="col">
+                {% if object %}
+                    <a href="{% url 'detail_user' user.id_CustomUser %}">Annuler</a>
+                {% else %}
+                    <a href="{% url 'myusers' %}">Annuler</a>
+                {% endif %}
+            </div>
+            <div class="col">
+                <input type="submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

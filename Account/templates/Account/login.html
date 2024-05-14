@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{%  load static %}
+
+
+{% block title %}
+    Se Connecter
+{% endblock %}
+
+{% block content %}
+    <div class="flex justify-around w-auto h-screen bg-black">
+        <div class="flex-col bg-black h-auto w-auto p-0">
+            <div class="flex justify-center items-center w-auto h-1/4">
+                <img src="{% static "img/logolearniverse200sf.png" %}" class="w-28 h-28" alt="">
+                <span class=" text-5xl text-center text-white font-semibold flex justify-center items-center font-['Akaya_Kanadaka'] ">LearnIverse</span>
+            </div>
+            <div class="h-1/4">
+                <p class="text-4xl text-center text-white font-semibold flex justify-center items-center font-['Akaya_Kanadaka']">
+                    Enregistrez-vous, <br>Selectionnez <br>le cours <br> et commencez <br>votre cours !
+                </p>
+            </div>
+            <div class="h-1/2">
+                <img src="{% static "img/happy.png" %}" class="h-full" alt="">
+                <img src="{% static "img/wm_bg_gradient.png" %}" class="absolute bottom-0 left-0 overflow-clip" alt="">
+            </div>
+        </div>
+        <div class="flex-col bg-gray-950 h-full p-0 w-3/5">
+            <div class="flex justify-end p-2 h-auto">
+                <div class="flex items-center">
+                    <span class="dark:text-gray-400 mr-7">Vous n'avez pas de compte ?</span>
+                </div>
+                <div>
+                    <a href="{% url "register" %}">
+                        <button class="flex justify-center items-center px-16 h-14 rounded-xl  dark:hover:bg-gradient-to-bl from-red-500 to-yellow-300 text-white font-semibold text-xl font-["Nunito"]  overflow-hidden relative cursor-pointer leading-6">S'inscrire</button>
+                    </a>
+                </div>
+            </div>
+            <div class="w-auto flex justify-center items-center py-2">
+                <div class="overflow-hidden relative mx-2 my-7 h-auto w-7/12 max-w-5xl flex-col">
+                    <div class=" flex justify-start w-auto">
+                        <span class="flex mb-3 font-bold  text-3xl text-gray-200 font-['Akaya_Kanadaka']">Se connecter</span>
+                    </div>
+                    <div class="flex-col">
+                        <div class="mb-5 flex w-auto">
+                            <a href="#" class="flex items-center justify-between w-full p-3 text-base font-medium text-gray-500 rounded-xl bg-gray-50 hover:text-black hover:bg-gray-400 dark:text-black dark:bg-white dark:hover:bg-gray-200 dark:hover:text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="" width="1.7em" height="1.7em" viewBox="0 0 256 315"><path d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615c-.35 1.116-6.599 22.563-21.757 44.716c-13.104 19.153-26.705 38.235-48.13 38.63c-21.05.388-27.82-12.483-51.888-12.483c-24.061 0-31.582 12.088-51.51 12.871c-20.68.783-36.428-20.71-49.64-39.793c-27-39.033-47.633-110.3-19.928-158.406c13.763-23.89 38.36-39.017 65.056-39.405c20.307-.387 39.475 13.662 51.889 13.662c12.406 0 35.699-16.895 60.186-14.414c10.25.427 39.026 4.14 57.503 31.186c-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199c-15.826.636-34.962 10.546-46.314 23.828c-10.173 11.763-19.082 30.589-16.678 48.633c17.64 1.365 35.66-8.964 46.64-22.262"/></svg>
+                                <span class=" w-2/3 font-['Akaya_Kanadaka'] text-xl">Continuer avec Apple</span>
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a href="#" class="flex items-center justify-between w-full p-3 text-base font-medium text-white rounded-xl bg-blue-500 hover:text-white hover:bg-gray-100 dark:text-white dark:bg-blue-700 dark:hover:bg-blue-600 dark:hover:text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 262" class="bg-white p-1 rounded-xl"><path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"/><path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"/><path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"/><path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"/></svg>
+                                <span class="w-2/3 font-['Akaya_Kanadaka']  text-xl mb-2">Continuer avec Google</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div>
+                        <form action="#" method="POST" class="text-center">
+                            {% csrf_token %}
+                            {% comment %} {% if error %}
+                            <p style="color: red;">{{ error }}</p>
+                            {% endif %} {% endcomment %}
+                            <div class="flex-col font-["Nunito"]">
+                                <div class="mb-4">
+                                    <label class="block text-gray-500 text-left font-["Nunito"] text-sm font-bold mb-2" for="email">
+                                        E-mail
+                                    </label>
+                                    <input type="text" placeholder="Entrez l'e-mail..." id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="username" required>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="password" class="block text-gray-500 text-left font-["Nunito"] mb-2 text-sm font-medium dark:text-gray-600">Mot de passe</label>
+                                    <input type="password" id="password" placeholder="Saississez votre mot de passe.." class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="password" required />
+                                </div>
+                                <div class="flex flex-col items-center mb-3 pl-1 font-["Nunito"]">
+                                    <div class="flex items-center h-5 text-yellow-500 font-semibold mb-4 hover:text-white">
+                                        <a href="#" >Mot de passe oublié ?</a>
+                                    </div>
+                                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-xl text-xl px-5 py-2.5 text-center dark:hover:bg-gradient-to-bl from-red-500 to-yellow-300">Connexion</button>
+<!--                                    <div>-->
+<!--                                    <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">Politiques de confidentialité</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

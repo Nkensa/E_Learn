@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{%  load static %}
+
+
+{% block title %}
+    S'enregistrer
+{% endblock %}
+
+{% block content %}
+<main class="w-full flex font-['Nunito']">
+    <div
+      class="relative flex-1 hidden items-center justify-center h-screen bg-gray-900 lg:flex"
+    >
+      <div class="relative z-10 w-full max-w-md">
+        <img src="{% static 'img/logolearniverse200sf.png' %}" width="150" />
+        <span class="self-center text-4xl font-bold whitespace-nowrap dark:text-white font-['Nunito']"><span class="text-[#ffc800] text-4xl">E</span>-Learniverse</span>
+
+        <div class="mt-16 space-y-3">
+          <h3 class="text-white text-3xl font-bold">
+            Registe your account and play your(s) course(s)
+          </h3>
+          <p class="text-gray-300">
+            Create your account and beguin your learning.
+          </p>
+          <div class="flex items-center -space-x-2 overflow-hidden">
+            <img
+              src="https://randomuser.me/api/portraits/women/79.jpg"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=a72ca28288878f8404a795f39642a46f"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/men/86.jpg"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1510227272981-87123e259b17?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=3759e09a5b9fbe53088b23c615b6312e"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <p class="text-sm text-gray-400 font-medium translate-x-5">
+              Join 5.000+ users
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute inset-0 my-auto h-[500px]"
+        style="
+          background: linear-gradient(
+            152.92deg,
+            rgba(192, 132, 252, 0.2) 4.54%,
+            rgba(232, 121, 249, 0.26) 34.2%,
+            rgba(192, 132, 252, 0.1) 77.55%
+          );
+          filter: blur(118px);
+        "
+      ></div>
+    </div>
+    <div class="flex-1 flex items-center justify-center h-screen">
+      <div
+        class="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0"
+      >
+        <div class="">
+          <img
+            src=""
+            class="lg:hidden w-6 h-6"
+          />
+          <div class="mt-5 space-y-2">
+
+            <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl">
+              Sign up
+            </h3>
+            <p class="">
+              Avez-vous déjà un compte ?
+              <a
+                href="{% url "login" %}"
+                class="font-medium text-indigo-600 hover:text-indigo-500"
+                >Se connecter
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-x-3">
+          <button
+            class="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100"
+          >
+            <!-- Comment: Google Icon SVG here -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 256 262"><path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"/><path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"/><path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"/><path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"/>
+            </svg>
+          </button>
+          <button
+            class="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100"
+          >
+            <!-- Comment: Twitter Icon SVG here -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.8em" viewBox="0 0 256 209"><path fill="#55acee" d="M256 25.45a105.04 105.04 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.183 105.183 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52c0 4.117.465 8.125 1.36 11.97c-43.65-2.191-82.35-23.1-108.255-54.876c-4.52 7.757-7.11 16.78-7.11 26.404c0 18.222 9.273 34.297 23.365 43.716a52.312 52.312 0 0 1-23.79-6.57c-.003.22-.003.44-.003.661c0 25.447 18.104 46.675 42.13 51.5a52.592 52.592 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475c-17.975 14.086-40.622 22.483-65.228 22.483c-4.24 0-8.42-.249-12.529-.734c23.243 14.902 50.85 23.597 80.51 23.597c96.607 0 149.434-80.031 149.434-149.435c0-2.278-.05-4.543-.152-6.795A106.748 106.748 0 0 0 256 25.45"/>
+            </svg>
+          </button>
+          <button
+            class="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100"
+          >
+            <!-- Comment: GitHub Icon SVG here -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 256 250"><path fill="#161614" d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46c6.397 1.185 8.746-2.777 8.746-6.158c0-3.052-.12-13.135-.174-23.83c-35.61 7.742-43.124-15.103-43.124-15.103c-5.823-14.795-14.213-18.73-14.213-18.73c-11.613-7.944.876-7.78.876-7.78c12.853.902 19.621 13.19 19.621 13.19c11.417 19.568 29.945 13.911 37.249 10.64c1.149-8.272 4.466-13.92 8.127-17.116c-28.431-3.236-58.318-14.212-58.318-63.258c0-13.975 5-25.394 13.188-34.358c-1.329-3.224-5.71-16.242 1.24-33.874c0 0 10.749-3.44 35.21 13.121c10.21-2.836 21.16-4.258 32.038-4.307c10.878.049 21.837 1.47 32.066 4.307c24.431-16.56 35.165-13.12 35.165-13.12c6.967 17.63 2.584 30.65 1.255 33.873c8.207 8.964 13.173 20.383 13.173 34.358c0 49.163-29.944 59.988-58.447 63.157c4.591 3.972 8.682 11.762 8.682 23.704c0 17.126-.148 30.91-.148 35.126c0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002C256 57.307 198.691 0 128.001 0m-80.06 182.34c-.282.636-1.283.827-2.194.39c-.929-.417-1.45-1.284-1.15-1.922c.276-.655 1.279-.838 2.205-.399c.93.418 1.46 1.293 1.139 1.931m6.296 5.618c-.61.566-1.804.303-2.614-.591c-.837-.892-.994-2.086-.375-2.66c.63-.566 1.787-.301 2.626.591c.838.903 1 2.088.363 2.66m4.32 7.188c-.785.545-2.067.034-2.86-1.104c-.784-1.138-.784-2.503.017-3.05c.795-.547 2.058-.055 2.861 1.075c.782 1.157.782 2.522-.019 3.08m7.304 8.325c-.701.774-2.196.566-3.29-.49c-1.119-1.032-1.43-2.496-.726-3.27c.71-.776 2.213-.558 3.315.49c1.11 1.03 1.45 2.505.701 3.27m9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033c-1.448-.439-2.395-1.613-2.103-2.626c.301-1.01 1.747-1.484 3.207-1.028c1.446.436 2.396 1.602 2.095 2.622m10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95c-1.53.034-2.769-.82-2.786-1.86c0-1.065 1.202-1.932 2.733-1.958c1.522-.03 2.768.818 2.768 1.868m10.555-.405c.182 1.03-.875 2.088-2.387 2.37c-1.485.271-2.861-.365-3.05-1.386c-.184-1.056.893-2.114 2.376-2.387c1.514-.263 2.868.356 3.061 1.403"/>
+            </svg>
+          </button>
+        </div>
+        <div class="relative">
+          <span class="block w-full h-px bg-gray-300"></span>
+          <p
+            class="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto"
+          >
+            Ou continuer avec
+          </p>
+        </div>
+        <form class="space-y-5" action="{% url 'register' %}" id="register_form" method="POST">
+            {% csrf_token %}
+          <div>
+            <label class="font-medium">Nom utilisateur</label>
+            <input
+              name="username"
+              type="text"
+              placeholder="Entrez votre nom d'utilisateur"
+              required
+              class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+            />
+          </div>
+          <div>
+            <label class="font-medium">Email</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="Entrez votre adresse mail"
+              required
+              class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+            />
+          </div>
+          <div>
+            <label class="font-medium">Mot de passe</label>
+            <input
+              name="password"
+              type="password"
+              placeholder="Entrez un mot de passe"
+              required
+              class="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+            />
+          </div>
+          {% if error %}
+          <p style="color: red;" class="h-auto w-auto bg-red-100 px-4 py-4 rounded-[10px] text-lg">{{ error }}</p>
+          {% endif %}
+          <button
+            class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+            type="submit"
+          >
+            Créer un compte
+          </button>
+        </form>
+      </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block script %}
+  const register_form=document.querySelector('#register_form')
+    register_form.addEventListener('submit',(e)=>{
+        e.preventDefault()
+    })
+{% endblock %}
+<!--MiennE0001(@)-->

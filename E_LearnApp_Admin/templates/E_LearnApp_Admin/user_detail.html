@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--{% comment %} <div class="max-w-sm h-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-50 shadow-xl dark:border-gray-300">-->
+<!--    <a href="#" class="">-->
+<!--        <img src="{{ category.photo_category.url }}" alt="" class="w-full rounded-t-lg">-->
+<!--    </a>-->
+<!--    <div class="p-5">-->
+<!--        <a href="#">-->
+<!--            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-950">{{ category.name_Category }}</h5>-->
+<!--        </a>-->
+<!--        <p class="mb-3 font-semibold text-gray-900 dark:text-blue-950"> {{ category.descriptionCategory }} </p>-->
+<!--        <a href="{% url 'classroom_list' %}" class="inline-flex items-center px-3 py-2 text-sm font-medium border-2 border-gray-400 text-center text-gray-400 rounded-lg dark:hover:border-[#ffc800] dark:text-gray-400 dark:hover:text-[#ffc800]">-->
+<!--            Selectionner la classe-->
+<!--            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">-->
+<!--                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>-->
+<!--            </svg>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div> {% endcomment %}-->
+
+<div class="card">
+    <div class="card-header">
+        Coordonnées
+        <a href="{% url 'updateuser' user.id_CustomUser %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 36 36" class="hover:bg-[#00183a33] rounded-lg p-[5px]"><path fill="#c1694f" d="M3.968 33.446C2.211 35.204.47 36.312.079 35.921c-.391-.391.718-2.132 2.475-3.889c1.757-1.758 3.498-2.866 3.889-2.475c.39.391-.718 2.131-2.475 3.889"/><path fill="#ffcc4d" d="m6.443 29.558l-2.122-2.122s-1.083 1.393-2.284 3.63C1.137 32.742.786 33.8.786 33.8l.707.707l.707.707s1.059-.352 2.734-1.251c2.237-1.201 3.629-2.284 3.629-2.284z"/><path fill="#31373d" d="M34.02 1.98c-3.535-3.536-18.164 10.297-18.871 11.004c-.707.707-1.304 1.348-.928 1.724L12.1 16.829c-2.122 2.122-8.486 9.899-7.779 10.606l2.122 2.122l2.121 2.121c.707.707 8.485-5.657 10.607-7.778l2.121-2.121c.376.376 1.017-.222 1.724-.929c.707-.706 14.54-15.334 11.004-18.87"/><path fill="#ffcc4d" d="M23.016 20.851c.085-.084.362-.375.774-.817l-7.823-7.822c-.442.411-.732.689-.817.774c-.707.707-1.304 1.348-.928 1.724l3.535 3.536l3.536 3.535c.375.374 1.016-.223 1.723-.93"/><path fill="#ffac33" d="M31.212 2.001C30.285 1.074 29.048.102 27.28.986c-1.768.884-7.313 4.441-9.878 7.005c-1.322 1.322-1.247 2.102-.751 2.165c.821.106 1.37.088 2.122-.663c.75-.751.883-2.033.883-2.033s3.05-2.342 5.458-3.778c2.409-1.437 3.268-1.682 4.11-.84c.842.842 1.988-.841 1.988-.841"/><path fill="#ffac33" d="m28.87 2.487l4.643 4.643a12.78 12.78 0 0 0 .818-2.011l-3.45-3.45c-.627.188-1.301.466-2.011.818"/></svg>
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="picture h-64 w-64">
+            <img src="{{ user.pp.url }}" alt="Photo profil">
+        </div>
+        <div class="cordo">
+            <div class="col">
+                <span> Username  </span> : {{ user.username }} <br>
+            </div>
+            <div class="col">
+                <span> Nom  </span> : {{ user.first_name }} <br>
+            </div>
+            <div class="col">
+                <span> Prenom  </span> : {{ user.last_name }} <br>
+            </div>
+            <div class="col">
+                <span> E-mail  </span> : {{ user.email }} <br>
+            </div>
+            <div class="col">
+                <span> Admin  </span> : {{ user.is_superuser }} <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "E_LearnApp_Admin/home_page_admin.html" %}
+
+
+{% block contenu %}
+    <div class="flex-col w-full h-full px-32">
+        <div class="flex items-center justify-center w-full h-12 my-6 text-3xl font-['Nunito'] text-white dark:text-gray-800 font-extrabold">lISTE DES MATIERES</div>
+        <div class="grid grid-cols-3 gap-7 w-full h-full ">
+            {% for subject in subjects %}
+                <div class="max-w-sm h-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-50 shadow-xl dark:border-gray-300">
+                    <a href="#" class="">
+                        <img src="{{ subject.photo_subject.url }}" alt="" class="w-full rounded-t-lg">
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-950">{{ subject.name_subject }}</h5>
+                        </a>
+                        <p class="mb-3 font-semibold text-gray-900 dark:text-blue-950"> {{ subject.description_subject }} </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
