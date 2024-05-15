@@ -1,5 +1,9 @@
+from django.contrib import auth
 from django.core.validators import validate_email
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+
+from Account.models import CustomUser
 
 
 # Create your views here.
@@ -9,10 +13,27 @@ def index(request):
     return render(request, "E_LearnSite/site.html")
 
 
+def login(request):
+    if request.method == 'POST':
+        print(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        auth_user = auth.authenticate(username=username, password=password)
+        print(auth_user)
+        if auth_user is not None:
+            auth.login(request, auth_user)
+            return redirect('WelcomeApp')
+        else:
+            return HttpResponseRedirect('login')
+    else:
+        return HttpResponseRedirect('login')
+
+
 def sign_up(request):
     error = False
     message = ""
     if request.method == 'POST':
+        print(request.method)
         name = request.POST.get('name', None)
         email = request.POST.get('email', None)
         password = request.POST.get('password', None)
@@ -24,13 +45,13 @@ def sign_up(request):
             error = True
             message = "L'adresse email n'est pas valide"
 
-        user = Users.objects.filter(email=email).first()
+        user = CustomUser.objects.filter(email=email).first()
         if user:
             error = True
             message = "L'utilisateur existe déjà"
 
         if error == False:
-            user = Users.objects.create(first_name=name, email=email, mot_de_passe=password, statut=1)
+            user = CustomUser.objects.create(first_name=name, email=email, password=password)
             user.save()
             return redirect("login")
 
