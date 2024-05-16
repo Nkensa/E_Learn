@@ -24,9 +24,8 @@ def login(request):
             auth.login(request, auth_user)
             return redirect('WelcomeApp')
         else:
-            return HttpResponseRedirect('login')
-    else:
-        return HttpResponseRedirect('login')
+            return redirect('login')
+    return render(request, "E_LearnSite/login.html")
 
 
 def sign_up(request):

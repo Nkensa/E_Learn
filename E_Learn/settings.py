@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Account',
     'E_LearnApp_Admin',
     'E_LearnSite',
+    'E_Learniverse',
 ]
 
 TAILWIND_APP_NAME = 'theme'

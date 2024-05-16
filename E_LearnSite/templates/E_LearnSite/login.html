@@ -29,7 +29,7 @@
                     <span class="dark:text-gray-400 mr-7">Vous n'avez pas de compte ?</span>
                 </div>
                 <div>
-                    <a href="{% url 'sing_up' %}">
+                    <a href="{% url 'sign_up' %}">
                         <button class="flex justify-center items-center px-16 h-14 rounded-xl  dark:hover:bg-gradient-to-bl from-red-500 to-yellow-300 text-white font-semibold text-xl font-['Nunito']  overflow-hidden relative cursor-pointer leading-6">S'inscrire</button>
                     </a>
                 </div>
@@ -63,20 +63,16 @@
                             <div class="flex-col">
                                 <div class="mb-4">
                                     <label class="block text-gray-500 text-left font-['Nunito'] text-sm font-bold mb-2" for="email">
-                                        E-mail
+                                        Username
                                     </label>
-                                    <input type="text" aria-label="Adresse e-mail" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="username" required>
+                                    <input type="text" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="username" required>
                                 </div>
                                 <div class="mb-5">
-                                    <label for="password" class="block text-gray-500 text-left font-['Nunito'] mb-2 text-sm font-medium dark:text-gray-600">Mot de passe</label>
+                                    <label for="password" class="block text-gray-500 text-left font-['Nunito'] mb-2 text-sm font-bold">Password</label>
                                     <input type="password" id="password" placeholder="Saississez votre mot de passe.." class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="password" required />
                                 </div>
                                 <div class="flex items-start mb-3 pl-1">
-                                    <div class="flex items-center h-5 text-yellow-500 font-semibold">
-                                        <a href="#" >Mot de passe oublié ?</a>
-                                    </div>
                                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-xl text-xl px-5 py-2.5 text-center dark:hover:bg-gradient-to-bl from-red-500 to-yellow-300">Connexion</button>
-                                    <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">Politiques de confidentialité</a></label>
                                 </div>
                             </div>
                         </form>

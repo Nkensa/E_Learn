@@ -1,0 +1,29 @@
+ {% extends "CoursePlay/base_CoursePlay.html" %}
+
+{% block contenu %}
+    <div class="flex-col w-full h-full bg-[] px-32">
+        <div class="flex items-center justify-center w-full h-12 my-6 text-3xl font-['Nunito'] text-white dark:text-gray-800 font-extrabold">Selectionnez une matière et commencez son aventure !</div>
+        <div class="grid grid-cols-3 gap-7 w-full h-full ">
+            {% for subject in subjects %}
+                <div class="max-w-sm h-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-50 shadow-xl dark:border-gray-300">
+                    <a href="#" class="">
+                        <img src="{{ category.photo_category.url }}" alt="" class="w-full rounded-t-lg">
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-950">{{ category.name_Category }}</h5>
+                        </a>
+                        <p class="mb-3 font-semibold text-gray-900 dark:text-blue-950"> {{ category.descriptionCategory }} </p>
+                        <a href="{% url 'classroom_list' %}" class="inline-flex items-center px-3 py-2 text-sm font-medium border-2 border-gray-400 text-center text-gray-400 rounded-lg dark:hover:border-[#ffc800] dark:text-gray-400 dark:hover:text-[#ffc800]">
+                            Selectionner la classe
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -25,5 +25,6 @@ urlpatterns = [
     path('Account/', include('Account.urls')),
     path('', include('E_LearnSite.urls')),
     path('E_LearnApp_Admin/', include('E_LearnApp_Admin.urls')),
+    path('E_Learniverse/', include('E_Learniverse.urls')),
 ]
 urlpatterns = urlpatterns+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
