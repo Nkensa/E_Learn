@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 <li class="{% if selected == 'profil' %}active{% endif %}">
-                    <a href="#" class="flex items-center p-2 hover:border-1 text-gray-900 rounded-[15px] dark:text-white hover:bg-gray-100 dark:hover:bg-[rgba(255,255,255,0.3)] group">
+                    <a href="{% url 'profil' %}" class="flex items-center p-2 hover:border-1 text-gray-900 rounded-[15px] dark:text-white hover:bg-gray-100 dark:hover:bg-[rgba(255,255,255,0.3)] group">
                         <div class="relative w-10 h-10 ml-4 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
                             <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                         </div>
@@ -91,7 +91,7 @@
         </aside>
         
         <div class="sm:ml-64 absolute h-full right-0 top-0" style='width:calc(100% - 256px)'>        
-            <div class="absolute flex items-center justify-center w-full h-auto bg-white  border-l-2 border-gray-600">
+            <div class="absolute flex items-center justify-center w-full h-dvh bg-gray-200  border-l-2 border-gray-600" style="background-image: url(../static/img/pngtree-night-starry-sky-trees-silhouette-illustration-background-picture-image_2251411.jpg); background-size: cover; background-repeat: repeat;">
                 {% block contenu %}
     
                 {% endblock %}
