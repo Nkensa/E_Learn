@@ -24,3 +24,41 @@ class Classroom(models.Model):
         return f'{self.name_classroom}'
 
 
+class Course(models.Model):
+    id_course = models.AutoField(primary_key=True)
+    title_Course = models.CharField(max_length=150)
+    description_course = models.CharField(max_length=45, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now_add=True)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    user = models.ManyToManyField(CustomUser)
+
+    def __str__(self):
+        return self.title_Course
+
+class Chapter(models.Model):
+    id_chapter = models.AutoField(primary_key=True)
+    title_chapter = models.CharField(max_length=150)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title_chapter
+
+
+class Modules(models.Model):
+    id_module = models.AutoField(primary_key=True)
+    title_module = models.CharField(max_length=150)
+    chapters = models.ManyToManyField(Chapter)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title_module
+
+
+class Lesson(models.Model):
+    id_lesson = models.AutoField(primary_key=True)
+    title_lesson = models.CharField(max_length=150)
+    content = models.TextField(blank=True)
+    file_content = models.FileField(upload_to="Lessons", blank=True, null=True)
+    module = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    chapters = models.ForeignKey(Course, on_delete=models.CASCADE)

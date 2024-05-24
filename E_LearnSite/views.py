@@ -15,16 +15,13 @@ def index(request):
 
 def login(request):
     if request.method == 'POST':
-        print(request.POST)
         username = request.POST['username']
         password = request.POST['password']
         auth_user = auth.authenticate(username=username, password=password)
-        print(auth_user)
-        if auth_user is not None:
+        if auth_user:
             auth.login(request, auth_user)
-            return redirect('WelcomeApp')
-        else:
-            return redirect('login')
+            return redirect('welcome_app')
+
     return render(request, "E_LearnSite/login.html")
 
 
@@ -32,10 +29,9 @@ def sign_up(request):
     error = False
     message = ""
     if request.method == 'POST':
-        print(request.method)
-        name = request.POST.get('name', None)
-        email = request.POST.get('email', None)
-        password = request.POST.get('password', None)
+        name = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
         print("==" * 7, " NEW POST : ", name, email, password, "==" * 7)
 
         try:

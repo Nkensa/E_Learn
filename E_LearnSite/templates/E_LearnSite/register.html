@@ -72,13 +72,6 @@
             class="lg:hidden w-6 h-6"
           />
           <div class="mt-5 space-y-2">
-           {% csrf_token %}
-            
-            {% comment %} {% if error %}
-            <p class="self-center p-3 w-auto h-12 bg-red-200 text-center text-sm font['Nunito'] font-bold text-red-600 rounded-2xl" role="alert">
-                {{ error }}
-            </p>
-            {% endif %} {% endcomment %}
             <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl">
               Sign up
             </h3>
@@ -174,11 +167,11 @@
       </div>
     </div>
 </main>
-{% endblock %}
+<!--{% endblock %}-->
 
-{% block script %}
-  const register_form=document.querySelector('#register_form')
-    register_form.addEventListener('submit',(e)=>{
-        e.preventDefault()
-    })
-{% endblock %}
+<!--{% block script %}-->
+<!--  const register_form=document.querySelector('#register_form')-->
+<!--    register_form.addEventListener('submit',(e)=>{-->
+<!--        e.preventDefault()-->
+<!--    })-->
+<!--{% endblock %}-->

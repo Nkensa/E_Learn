@@ -1,0 +1,46 @@
+{% extends "E_Learniverse/base_CoursePlay.html" %}
+
+{% block contenu %}
+<!--<div class="flex-col w-full h-full px-32">-->
+<!--    <div class="flex items-center justify-center w-full h-12 my-6 text-3xl font-['Nunito'] text-white dark:text-gray-800 font-extrabold">Selectionnez votre aventure et commencons !</div>-->
+<!--    <div class="grid grid-cols-3 gap-7 w-full h-full ">-->
+<!--        {% for adventure in adventures %}-->
+<!--            <div class="max-w-sm h-auto bg-white border border-gray-200 rounded-lg dark:bg-gray-50 shadow-xl dark:border-gray-300">-->
+<!--                <a href="#" class="">-->
+<!--                    <img src="{{ adventure.subjects.photo_subject.url }}" alt="" class="w-full rounded-t-lg">-->
+<!--                </a>-->
+<!--                <div class="p-5">-->
+<!--                    <a href="#">-->
+<!--                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-950">{{ adventure.classroom.name_classroom }}</h5>-->
+<!--                    </a>-->
+<!--        {% for subject in subjects %}-->
+<!--                    <p class="mb-3 font-semibold text-gray-900 dark:text-blue-950"> {{ subject.name_subject  }} </p>-->
+<!--        {% endfor %}-->
+<!--                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium border-2 border-gray-400 text-center text-gray-400 rounded-lg dark:hover:border-[#ffc800] dark:text-gray-400 dark:hover:text-[#ffc800]">-->
+<!--                        Continuer...-->
+<!--                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">-->
+<!--                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>-->
+<!--                        </svg>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</div>-->
+
+{% if adventures %}
+    <h2>Mes Aventures :</h2>
+    {% for adventure in adventures %}
+        <h3>{{ adventure.classroom.name_classroom }}</h3>
+        <p>Sujets :</p>
+        <ul>
+            {% for subject in adventure.subjects.all %}
+                <li><a href="#">{{ subject.name_subject }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% else %}
+    <p>Vous n'avez pas encore créé d'Aventure.</p>
+{% endif %}
+
+{% endblock %}

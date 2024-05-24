@@ -55,11 +55,8 @@
                         
                     </div>
                     <div>
-                        <form action="{% url 'login' %}" method="POST" class="text-center">
+                        <form method="POST" class="text-center">
                             {% csrf_token %}
-                            {% comment %} {% if error %}
-                            <p style="color: red;">{{ error }}</p>
-                            {% endif %} {% endcomment %}
                             <div class="flex-col">
                                 <div class="mb-4">
                                     <label class="block text-gray-500 text-left font-['Nunito'] text-sm font-bold mb-2" for="email">

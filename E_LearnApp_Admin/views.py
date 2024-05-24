@@ -43,6 +43,7 @@ def Users_list(request):
 
 def detail_user(request, pk):
     user = get_object_or_404(CustomUser, id_CustomUser=pk)
+    print(f'\n {user.adventure.all} \n')
 
     return render(request, 'E_LearnApp_Admin/user_detail.html', {'user': user})
 
